@@ -4,9 +4,9 @@
 [*] - server
   [*] - public
     [*] - styles
-      [ ] - styles.scss
-      [ ] - styles.css
-      [ ] - _defaults.scss
+      [*] - styles.scss
+      [*] - styles.css
+      [*] - _config.scss
       [ ] - _reactive.scss
     [*] - scripts
       [*] - client.js
@@ -75,13 +75,13 @@
 [ ] - ? possible put update function
 
 *********************server.js*********************
-[ ] - express
-[ ] - app
-[ ] - body parser
-[ ] - urlencoded
-[ ] - router
-[ ] - static server
-[ ] - port
+[*] - express
+[*] - app
+[*] - body parser
+[*] - urlencoded
+[*] - router
+[*] - static server
+[*] - port
 [ ] - 
 [ ] - 
 [ ] - 
@@ -107,14 +107,14 @@
 [ ] - 
 [ ] - 
 
-*************weekend-to-do-app-server***************
-[ ] - id
-[ ] - task_name
-[ ] - description
-[ ] - is complete
-[ ] - ?custom sort
-[ ] - 
-[ ] - 
+*************weekend-to-do-app-database***************
+[*] - id
+[*] - task_name
+[*] - description
+[*] - is complete
+[*] - ?custom sort
+[*] - due_by
+[*] - completed_by
 
 *****************REMEMBER TO DO THIS*******************
 [ ] - GIT MERGE --NO-FF
