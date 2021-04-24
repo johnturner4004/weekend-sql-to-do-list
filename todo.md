@@ -87,23 +87,23 @@
 [ ] - 
 
 *********************router.js*********************
-[ ] - express
-[ ] - router express
-[ ] - pool
-[ ] - get
-[ ] - post
+[*] - express
+[*] - router express
+[*] - pool
+[*] - get
+[*] - post
 [ ] - put
 [ ] - delete
 [ ] - 
 [ ] - 
 
 *********************pool.js*********************
-[ ] - pg
-[ ] - config
-[ ] - new Pool
-[ ] - pool connect
-[ ] - pool error
-[ ] - export pool
+[*] - pg
+[*] - config
+[*] - new Pool
+[*] - pool connect
+[*] - pool error
+[*] - export pool
 [ ] - 
 [ ] - 
 

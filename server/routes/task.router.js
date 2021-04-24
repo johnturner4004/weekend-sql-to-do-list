@@ -17,13 +17,12 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log('***************************************************************************************************************************************');
   
   let newTask = req.body;
   console.log(newTask);
   
   let sqlText = `INSERT INTO "list" ("task_name", "description", "time_added", "due_date") 
-    VALUES($1, $2, $3, $4);`;
+  VALUES($1, $2, $3, $4);`;
   pool.query(sqlText, [newTask.task_name, newTask.description, newTask.time_added, newTask.due_date])
   .then(result => {
     console.log('Added a new task...', newTask);
@@ -33,7 +32,39 @@ router.post('/', (req, res) => {
     console.log('Error adding new task', error);
     res.sendStatus(500);    
   })
+});
+
+router.put('/:id', (res, req) => {
+  console.log('***************************************************************************************************************************************');
+  const idToUpdate = req.params.id;
+  console.log(idToUpdate);
+  const newValue = req.body;
+  console.log(newValue);
+  
+  const sqlText = `UPDATE "list" SET "completed"=$1 WHERE "id"=$2;`;
+  pool.query(sqlText, [newValue.complete, idToUpdate])
+  .then(response => {
+    console.log('Data has been updated', response);
+    res.sendStatus(201);
+  })
+  .catch(error => {
+    console.log('Error updating data', error);
+    res.sendStatus(500);
+  })
 })
 
+router.delete('/:id', (req, res) => {
+  let id = req.params.id;
+  let sqlText = `DELETE FROM "list" WHERE "id"=$1;`;
+  pool.query(sqlText, [id])
+  .then(response => {
+    console.log('Deleted task:', response);
+    res.sendStatus(201);
+  })
+  .catch(error => {
+    console.log('Unable to delete task', error);
+    res.sendStatus(418);
+  });
+})
 
 module.exports = router;
