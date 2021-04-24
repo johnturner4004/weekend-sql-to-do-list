@@ -3,13 +3,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-//imports the routers and pool modules to establish communication between server.js
-//and the database
-// const taskRouter = require('./routes/task.router.js');
-// const pool = require('./modules/pool');
-
 //uses body parser to read data from the client.js file
 app.use(bodyParser.urlencoded({extended: true}));
+
+//imports the routers to establish communication between server.js and the database
+const taskRouter = require('./routes/task.router.js');
+app.use('/task', taskRouter);
 
 //sets the route to communicate between client.js and the server
 // app.use('./task', taskRouter);
