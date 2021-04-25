@@ -4,6 +4,7 @@ function onReady() {
   console.log('JQ');
   getTask();
   $('.list').on('click', '.completeBtn', complete);
+  $('.list').on('click', '.deleteBtn', deleteTask);
   $('#new').on('click', addTask);
 }
 
@@ -33,7 +34,7 @@ function render(array) {
         </div>
         <div class="button col-2">
           <button class="completeBtn" data-id="${array[i].id}">√</button>
-          <button class="deleteBtn data-id="${array[i].id}">X</button>
+          <button class="deleteBtn" data-id="${array[i].id}">X</button>
         </div>
       </li>
     `)
@@ -62,7 +63,7 @@ function addTask() {
 
 function complete() {
   console.log('Complete click');
-  id = $(this).data("id");
+  let id = $(this).data("id");
   console.log(id);
 
   $.ajax({
@@ -79,4 +80,22 @@ function complete() {
       console.log('Unable to mark task as complete', error);
       alert('Unable to mark task as complete');
     });
+}
+
+function deleteTask() {
+  console.log('Delete click');
+  let deleteId = $(this).data("id");
+  console.log(deleteId);
+  $.ajax({
+    method: 'DELETE',
+    url: `/task/${deleteId}`
+  })
+  .then(response => {
+    console.log('Deleted a task', response);
+    getTask();
+  })
+  .catch(error => {
+    console.log('Unable to delete task', error);
+    alert('Unable to delete task');
+  })
 }

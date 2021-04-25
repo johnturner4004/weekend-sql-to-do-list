@@ -36,7 +36,6 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (res, req) => {
   console.log('***************************************************************************************************************************************');
-  console.log(req.body);
   
   let idToUpdate = req.params.id;
   const sqlText = `UPDATE "list" SET "completed"=$1 WHERE "id"=$2;`;
@@ -52,6 +51,7 @@ router.put('/:id', (res, req) => {
 })
 
 router.delete('/:id', (req, res) => {
+  console.log('***************************************************************************************************************************************');
   let id = req.params.id;
   let sqlText = `DELETE FROM "list" WHERE "id"=$1;`;
   pool.query(sqlText, [id])
