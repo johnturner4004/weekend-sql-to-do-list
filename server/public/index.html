@@ -15,17 +15,18 @@
 <body>
   <header>
     <div class="row">
-      <h1 class="glass col-2">#done</h1>
+      <h1 class="glass col-2"><span>#</span><br>done</h1>
       <div class="glass next-task col-10"></div>
     </div>
   </header>
   <main>
     <div class="listBox row">
       <div class="glass sidebar col-2">
-        <button type="button" class="glass sidebar-button">Add new task</button>
+        <input type="text" id="task_name" placeholder="New task"><br>
+        <button type="button" class="glass sidebar-button" id="new">Add new task</button>
       </div>
       <div class="glass listBox col-10">
-        <div class="list"></div>
+        <ul class="list"></ul>
       </div>
     </div>
   </main>

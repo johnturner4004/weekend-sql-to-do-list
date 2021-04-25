@@ -4,7 +4,7 @@ const router = express.Router();
 const pool = require('../modules/pool.js');
 
 router.get('/', (req, res) => {
-  let sqlText = `SELECT * FROM "list";`;
+  let sqlText = `SELECT * FROM "list" ORDER BY "id";`;
   pool.query(sqlText)
     .then(results => {
       console.log('Sending to do list from server', results);
@@ -36,20 +36,18 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (res, req) => {
   console.log('***************************************************************************************************************************************');
-  const idToUpdate = req.params.id;
-  console.log(idToUpdate);
-  const newValue = req.body;
-  console.log(newValue);
+  console.log(req.body);
   
+  let idToUpdate = req.params.id;
   const sqlText = `UPDATE "list" SET "completed"=$1 WHERE "id"=$2;`;
-  pool.query(sqlText, [newValue.complete, idToUpdate])
+  pool.query(sqlText, ['true', idToUpdate])
   .then(response => {
     console.log('Data has been updated', response);
     res.sendStatus(201);
   })
   .catch(error => {
     console.log('Error updating data', error);
-    res.sendStatus(500);
+    res.sendStatus(418);
   })
 })
 
