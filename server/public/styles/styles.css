@@ -1,4 +1,81 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: red;
+  background-color: papayawhip;
+  @i;
+}
+
+.glass {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.6), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.3), inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.6), inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+header h1 {
+  background-color: #0f0;
+  height: 20vh;
+  text-align: center;
+  margin: 0;
+}
+
+header .next-task {
+  height: 20vh;
+}
+
+.sidebar {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 5vh;
+}
+
+.sidebar-button {
+  width: 80%;
+  height: 10vh;
+  border: 2px solid #259A40;
+  border-radius: 10px;
+  background-color: papayawhip;
+  color: #259A40;
+}
+
+.sidebar-button:hover {
+  background-color: #259A40;
+  color: papayawhip;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar-button:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 3px 2px #0f0;
+          box-shadow: 0 0 3px 2px #0f0;
+  background-color: #259A40;
+  color: papayawhip;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.listBox {
+  height: 80vh;
+  overflow: hidden;
+  padding: 0;
 }
 /*# sourceMappingURL=styles.css.map */

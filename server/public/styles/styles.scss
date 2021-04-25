@@ -1,3 +1,63 @@
+@import './config';
+
 body { 
-  background-color: red;
+  background-color: $primary-color;
+  @include set-text-color($primary-color);
+}
+
+.glass {
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.6), inset 0 -15px 30px rgba(0,0,0,0.3);
+  }
+
+header {
+  align-items: center;
+  align-content: center;
+  h1 {
+    background-color: #0f0;
+    height: 20vh;
+    text-align: center;
+    margin: 0;
+  }
+  .next-task {
+    height: 20vh;
+
+  }
+}
+
+.sidebar {
+  height:80vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+}
+
+.sidebar-button {
+  width: 80%;
+  height: 10vh;
+  border: 2px solid $secondary-color;
+  border-radius: 10px;
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+.sidebar-button:hover {
+  background-color: $secondary-color;
+  color: $primary-color;
+  @include transition-ease;
+}
+
+.sidebar-button:focus {
+  outline: none;
+  box-shadow: 0 0 3px 2px #0f0;
+  background-color: $secondary-color;
+  color: $primary-color;
+  @include transition-ease;
+}
+
+.listBox{
+  height: 80vh;
+  overflow: hidden;
+  padding: 0;
 }

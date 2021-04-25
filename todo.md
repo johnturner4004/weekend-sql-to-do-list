@@ -27,50 +27,50 @@
 [ ] - README.md
 
 ***********************DOM***********************
-[ ] - header
+[*] - header
 [ ] - list of tasks - REVERSE ORDER
   [ ] - sort by due date
   [ ] - sort by time added
   [ ] - show/hide completed tasks - change boolean, update display
   [ ] - task box
-    [ ] - task name
-    [ ] - task title
+    [*] - task name
+    [ ] - task description
     [ ] - time added/completed LOOK PRETTY
-    [ ] - complete button - style change on complete
-    [ ] - delete button - display update on delete
+    [ ] - RRR complete button - style change on complete
+    [ ] - RRR delete button - display update on delete
       [ ] - delete confirmation alert - probably bootstrap or sweet alerts
     [ ] - due date
-[ ] - add task - display update
+[ ] - RRR add task - display update
   [ ] - Bootstrap Modal or Sweet Alerts pop up to input task
   [ ] - update dom to display new task
 [ ] - 
 [ ] - ?possible DOM change to custom order tasks
 
 *********************scss.js*********************
-[ ] - bg color
+[*] - bg color
 [ ] - cust font and size
-[ ] - font/color change on complete
+[ ] - RRR font/color change on complete
 [ ] - 
 [ ] - 
 [ ] - 
 
 *********************client.js*********************
-[ ] - doc ready 
-[ ] - onready
-  [ ] - add button
-  [ ] - complete button
-  [ ] - delete button
+[*] - doc ready 
+[*] - onready
+  [ ] - RRR add button
+  [ ] - RRR complete button
+  [ ] - RRR delete button
   [ ] - sort dropdown
 [ ] - f show hide - boolean => update
-[ ] - update display
+[*] - update display
 [ ] - f sort by
-  [ ] - get
+[*] - get
 [ ] - f addtask
   [ ] - post
-[ ] - f complete
-  [ ] - put
-[ ] - f delete
-  [ ] - delete
+[ ] - RRR f complete
+  [ ] - RRR put
+[ ] - RRR f delete
+  [ ] - RRR delete
 [ ] - 
 [ ] - ? possible put update function
 

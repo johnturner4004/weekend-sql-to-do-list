@@ -1,26 +1,6 @@
-$primary-color: antiquewhite;
-$secondary-color: #000;
-$calculator-color: #20303B;
-$calculator-screen: #598F70;
-$calculator-text: #050F0D;
-
-@font-face {
-  font-family: 'LED Sled Straight';
-  src: url('/styles/fonts/LEDSledStraight.woff2') format('woff2'),
-      url('/styles/fonts/LEDSledStraight.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'NinePin';
-  src: url('/styles/fonts/NinePin.woff2') format('woff2'),
-      url('/styles/fonts/NinePin.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+$primary-color: papayawhip;
+$secondary-color: #259A40;
+$delete-color: #f00;
 
 * {
   box-sizing: border-box;
@@ -34,9 +14,9 @@ $calculator-text: #050F0D;
 
 @function set-text-color($color) {
   @if (lightness($color) > 40%) {
-    @return #000;
+    @return $secondary-color;
   } @else {
-    @return #fff;
+    @return $primary-color;
   }
 }
 
