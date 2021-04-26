@@ -16,8 +16,10 @@ header {
   align-items: center;
   align-content: center;
   h1 {
+    height: 20vh;
+    min-height: fit-content;
+    min-width: fit-content;
     background-color: #0f0;
-    height: 120px;
     text-align: center;
     margin: 0;
     color: #000;
@@ -29,8 +31,7 @@ header {
   }
 
   .next-task {
-    height: 120px;
-
+    
   }
 }
 

@@ -89,8 +89,14 @@ header {
 }
 
 header h1 {
+  height: 20vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   background-color: #0f0;
-  height: 120px;
   text-align: center;
   margin: 0;
   color: #000;
@@ -100,10 +106,6 @@ header h1 {
 
 header h1 span {
   font-size: 3em;
-}
-
-header .next-task {
-  height: 120px;
 }
 
 .sidebar {
