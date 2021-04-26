@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
   VALUES($1, $2, $3, $4);`;
   pool.query(sqlText, [newTask.task_name, newTask.description, newTask.time_added, newTask.due_date])
   .then(result => {
-    console.log('Added a new task...', newTask);
+    console.log('Added a new task...', result);
     res.sendStatus(201);
   })
   .catch(error => {
@@ -34,34 +34,35 @@ router.post('/', (req, res) => {
   })
 });
 
-router.put('/:id', (res, req) => {
-  console.log('***************************************************************************************************************************************');
-  
+router.put('/:id', (req, res) => {
+  console.log(' PUT*******************************************************************************************************************************');
+  console.log(req.body);
+  console.log(req.params.id);
   let idToUpdate = req.params.id;
-  const sqlText = `UPDATE "list" SET "completed"=$1 WHERE "id"=$2;`;
-  pool.query(sqlText, ['true', idToUpdate])
-  .then(response => {
-    console.log('Data has been updated', response);
+  console.log('idToUpdate');
+  const sqlText = `UPDATE "list" SET "completed"='true' WHERE "id"=$1;`;
+  pool.query(sqlText, [idToUpdate])
+  .then(result => {
+    console.log('Data has been updated', result);
     res.sendStatus(201);
   })
   .catch(error => {
     console.log('Error updating data', error);
-    res.sendStatus(418);
+    res.sendStatus(500);
   })
 })
 
 router.delete('/:id', (req, res) => {
-  console.log('***************************************************************************************************************************************');
   let id = req.params.id;
   let sqlText = `DELETE FROM "list" WHERE "id"=$1;`;
   pool.query(sqlText, [id])
-  .then(response => {
-    console.log('Deleted task:', response);
+  .then(result => {
+    console.log('Deleted task:', result);
     res.sendStatus(201);
   })
   .catch(error => {
     console.log('Unable to delete task', error);
-    res.sendStatus(418);
+    res.sendStatus(500);
   });
 })
 
