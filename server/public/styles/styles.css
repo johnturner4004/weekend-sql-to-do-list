@@ -100,8 +100,8 @@ header h1 {
   text-align: center;
   margin: 0;
   color: #000;
-  padding-top: .6em;
-  line-height: .8em;
+  padding-top: 0.6em;
+  line-height: 0.8em;
 }
 
 header h1 span {
@@ -149,6 +149,11 @@ header h1 span {
   margin-left: 0;
   margin-right: 0;
   list-style-type: none;
+  width: 100%;
+}
+
+.list {
+  padding: 0;
 }
 
 .listBox {
@@ -160,5 +165,93 @@ header h1 span {
 .complete {
   background-color: #259A40;
   color: papayawhip;
+}
+
+.modal-content {
+  background-color: papayawhip;
+  color: #259A40;
+}
+
+.modal-content .modal-form {
+  padding: 0;
+}
+
+.modal-content .modal-form .modal-row {
+  padding: 0;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.modal-content .modal-form .modal-row .topLeft {
+  padding: 0;
+}
+
+.modal-content .modal-form .modal-row .topRight {
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content .modal-form .modal-row-2 {
+  width: 100%;
+}
+
+.modal-content .modal-form .modal-row-2 .modal-description-box .modal-description {
+  width: 100%;
+  height: 20vh;
+  text-align: start;
+}
+
+.modal-content .modal-button {
+  width: 30%;
+  height: 5vh;
+  border: 2px solid #259A40;
+  border-radius: 10px;
+  background-color: papayawhip;
+  color: #259A40;
+}
+
+.modal-content .modal-button:hover {
+  background-color: #259A40;
+  color: papayawhip;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-content .modal-button:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 3px 2px #0f0;
+          box-shadow: 0 0 3px 2px #0f0;
+  background-color: #259A40;
+  color: papayawhip;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-content .modal-secondary-button {
+  width: 30%;
+  height: 5vh;
+  border: 2px solid #292C2F;
+  border-radius: 10px;
+  background-color: #6C757D;
+  color: papayawhip;
+}
+
+.modal-content .modal-secondary-button:hover {
+  background-color: #f00;
+  color: #292C2F;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-content .modal-secondary-button:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 3px 2px #0f0;
+          box-shadow: 0 0 3px 2px #0f0;
+  background-color: #259A40;
+  color: papayawhip;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 /*# sourceMappingURL=styles.css.map */
