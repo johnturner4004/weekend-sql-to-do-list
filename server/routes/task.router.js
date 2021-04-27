@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const moment = require('moment');
 
 const pool = require('../modules/pool.js');
 
@@ -19,11 +20,14 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   
   let newTask = req.body;
+  let now = moment();
+  newTask.time_added = now;
+  newTask.completed = false;
   console.log(newTask);
   
-  let sqlText = `INSERT INTO "list" ("task_name", "description", "time_added", "due_date") 
-  VALUES($1, $2, $3, $4);`;
-  pool.query(sqlText, [newTask.task_name, newTask.description, newTask.time_added, newTask.due_date])
+  let sqlText = `INSERT INTO "list" ("task_name", "description", "time_added", "due_date", completed) 
+  VALUES($1, $2, $3, $4, $5);`;
+  pool.query(sqlText, [newTask.task_name, newTask.description, newTask.time_added, newTask.due_date, newTask.completed])
   .then(result => {
     console.log('Added a new task...', result);
     res.sendStatus(201);

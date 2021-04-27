@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./vendors/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/styles.css">
+  <script src="./vendors/bootstrap.min.js"></script>
   <script src="./vendors/jquery-3.6.0.min.js"></script>
   <script src="./scripts/client.js"></script>
   <title>My to do list</title>
@@ -19,11 +20,45 @@
       <div class="glass next-task col-10"></div>
     </div>
   </header>
+  <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content glass">
+        <div class="modal-header">
+          <h5 class="modal-title">Add new task:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-form container-fluid">
+            <div class="modal-row row col-12">
+              <div class="topLeft col-6">
+                <label>Task title:</label><br>
+                <input type="text" id="task_name" maxlength="120" />
+              </div>
+              <div class="topRight col-6">
+                <label>Due Date and Time</label><br>
+                <input type="datetime-local" id="due_date" />
+              </div>
+            </div>
+            <div class="modal-row-2 col-12">
+              <div class="modal-description-box col-12">
+                <label>Task description:</label><br>
+                <textarea class="modal-description" id="description" rows="5" maxlength="500"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="glass modal-secondary-button" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="glass modal-button" id="addButton">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <main>
     <div class="listBox row">
       <div class="glass sidebar col-2">
-        <input type="text" id="task_name" placeholder="New task"><br>
-        <button type="button" class="glass sidebar-button" id="new">Add new task</button>
+        <button type="button" class="glass sidebar-button" id="new" data-bs-toggle="modal"
+          data-bs-target="#addTaskModal">Add new task</button>
       </div>
       <div class="glass listBox col-10">
         <ul class="list"></ul>

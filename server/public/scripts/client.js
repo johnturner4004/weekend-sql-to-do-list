@@ -7,7 +7,7 @@ function onReady() {
   $('.list').on('click', '.deleteBtn', deleteTask);
   $('.next-task').on('click', '.completeBtn', complete);
   $('.next-task').on('click', '.deleteBtn', deleteTask);
-  $('#new').on('click', addTask);
+  $('#addButton').on('click', addTask);
 }
 
 function getTask() {
@@ -73,7 +73,9 @@ function render(array) {
 function addTask() {
   console.log('add click');
   let new_task = {
-    task_name: $('#task_name').val()
+    task_name: $('#task_name').val(),
+    due_date: $('#due_date').val(),
+    description: $('#description').val(),
   };
   console.log(new_task);
   $.ajax({
@@ -84,6 +86,9 @@ function addTask() {
     .then(response => {
       console.log(`Added ${new_task} to task list`, response);
       $('#task_name').val('');
+      $('#due_date').val('');
+      $('#description').val('');
+      $('#addTaskModal').modal('toggle')
       getTask()
     })
     .catch(error => {
