@@ -148,6 +148,7 @@ header h1 span {
 .row {
   margin-left: 0;
   margin-right: 0;
+  list-style-type: none;
 }
 
 .listBox {
