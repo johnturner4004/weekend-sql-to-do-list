@@ -86,13 +86,11 @@ header {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  height: 150px;
 }
 
 header h1 {
-  height: 20vh;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
+  height: 150px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;

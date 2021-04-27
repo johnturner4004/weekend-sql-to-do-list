@@ -52,14 +52,19 @@ function render(array) {
     let locationString = '';
     if (i === numberNext) {
       locationString = '.next-task'
-      classString = "task"
+      classString = "task container row"
     } else {
       locationString = '.list'
     }
+    let description = '';
+    if (array[i].description !== null) {
+      description = array[i].description;
+    }
     $(locationString).append(`
       <li class="${classString}">
-        <div class="text" col-10">
+        <div class="text col-10">
           <h2>${array[i].task_name}</h2>
+          <p>${description}</p>
         </div>
         <div class="button col-2">
           <button class="completeBtn" data-id="${array[i].id}">√</button>
