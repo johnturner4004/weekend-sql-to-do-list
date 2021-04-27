@@ -5,6 +5,8 @@ function onReady() {
   getTask();
   $('.list').on('click', '.completeBtn', complete);
   $('.list').on('click', '.deleteBtn', deleteTask);
+  $('.next-task').on('click', '.completeBtn', complete);
+  $('.next-task').on('click', '.deleteBtn', deleteTask);
   $('#new').on('click', addTask);
 }
 
@@ -25,6 +27,20 @@ function getTask() {
 }
 
 function render(array) {
+  $('.next-task').empty()
+  let nextTask = '';
+  let numberNext = 0;
+  while (nextTask === '' && numberNext < array.length) {
+    console.log('in the loop');
+    
+    if (array[numberNext].completed !== true) {
+      nextTask = array[numberNext];
+    } else {
+      numberNext++;
+    }
+  }
+  console.log('next number', numberNext);
+  
   $('.list').empty();
   for (let i = 0; i < array.length; i++) {
     let classString = '';
@@ -33,7 +49,14 @@ function render(array) {
     } else {
       classString = "glass task row container";
     }
-    $('.list').append(`
+    let locationString = '';
+    if (i === numberNext) {
+      locationString = '.next-task'
+      classString = "task"
+    } else {
+      locationString = '.list'
+    }
+    $(locationString).append(`
       <li class="${classString}">
         <div class="text" col-10">
           <h2>${array[i].task_name}</h2>
