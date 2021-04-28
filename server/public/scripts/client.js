@@ -67,8 +67,8 @@ function render(array) {
           <p>${description}</p>
         </div>
         <div class="button col-2">
-          <button class="completeBtn" data-id="${array[i].id}">√</button>
-          <button class="deleteBtn" data-id="${array[i].id}">X</button>
+          <p><button class="completeBtn" data-id="${array[i].id}">√</button>
+          Delete: <button aria-label="Close" class="btn-close" class="deleteBtn" data-id="${array[i].id}"></button></p>
         </div>
       </li>
     `)

@@ -32,40 +32,38 @@ header {
       font-size: 3em;
     }
   }
-
-  .next-task {
-  }
 }
+
 
 .sidebar {
   height: 80vh;
   display: flex;
   justify-content: center;
   padding-top: 5vh;
+  .sidebar-button {
+    width: 80%;
+    height: 10vh;
+    border: 2px solid $secondary-color;
+    border-radius: 10px;
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+  
+  .sidebar-button:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+    @include transition-ease;
+  }
+  
+  .sidebar-button:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px #0f0;
+    background-color: $secondary-color;
+    color: $primary-color;
+    @include transition-ease;
+  }
 }
 
-.sidebar-button {
-  width: 80%;
-  height: 10vh;
-  border: 2px solid $secondary-color;
-  border-radius: 10px;
-  background-color: $primary-color;
-  color: $secondary-color;
-}
-
-.sidebar-button:hover {
-  background-color: $secondary-color;
-  color: $primary-color;
-  @include transition-ease;
-}
-
-.sidebar-button:focus {
-  outline: none;
-  box-shadow: 0 0 3px 2px #0f0;
-  background-color: $secondary-color;
-  color: $primary-color;
-  @include transition-ease;
-}
 
 .row {
   margin-left: 0;
@@ -154,5 +152,11 @@ header {
     background-color: $secondary-color;
     color: $primary-color;
     @include transition-ease;
+  }
+}
+
+.button {
+  .deleteBtn {
+    
   }
 }

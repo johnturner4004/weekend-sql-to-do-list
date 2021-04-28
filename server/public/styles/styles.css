@@ -117,7 +117,7 @@ header h1 span {
   padding-top: 5vh;
 }
 
-.sidebar-button {
+.sidebar .sidebar-button {
   width: 80%;
   height: 10vh;
   border: 2px solid #259A40;
@@ -126,14 +126,14 @@ header h1 span {
   color: #259A40;
 }
 
-.sidebar-button:hover {
+.sidebar .sidebar-button:hover {
   background-color: #259A40;
   color: papayawhip;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
-.sidebar-button:focus {
+.sidebar .sidebar-button:focus {
   outline: none;
   -webkit-box-shadow: 0 0 3px 2px #0f0;
           box-shadow: 0 0 3px 2px #0f0;
